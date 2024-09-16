@@ -33,6 +33,32 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public boolean isProper() {
+        return Math.abs(this.numerator) < Math.abs(this.denominator);
+    }
+
+    public boolean isImproper() {
+        return Math.abs(this.numerator) >= Math.abs(this.denominator);
+    }
+
+    public boolean isEquivalent(Fraction other) {
+        return this.numerator * other.getDenominator() == this.denominator * other.getNumerator();
+    }
+
+    public Fraction add(Fraction other) {
+        int commonDenominator = this.denominator * other.getDenominator();
+        int newNumerator = (this.numerator * other.getDenominator()) + (other.getNumerator() * this.denominator);
+        return new Fraction(newNumerator, commonDenominator);
+    }
+
+    public Fraction multiply(Fraction other) {
+        return new Fraction(this.numerator * other.getNumerator(), this.denominator * other.getDenominator());
+    }
+
+    public Fraction divide(Fraction other) {
+        return new Fraction(this.numerator * other.getDenominator(), this.denominator * other.getNumerator());
+    }
+
     @Override
     public String toString() {
         return "Fraction{" +
