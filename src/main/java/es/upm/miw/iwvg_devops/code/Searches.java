@@ -35,6 +35,7 @@ public class Searches {
                         .anyMatch(Fraction::isImproper))
                 .map(User::getFamilyName)
                 .distinct();
+        // This was a fake bug
     }
 
     public Stream<String> findUserFamilyNameInitialBySomeProperFraction() {
