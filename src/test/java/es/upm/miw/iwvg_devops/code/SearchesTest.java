@@ -21,4 +21,10 @@ class SearchesTest {
         assertEquals(List.of("Oscar", "Ana", "Paula"), new Searches().findUserNameBySomeImproperFraction()
                 .collect(Collectors.toList()));
     }
+
+    @Test
+    void testFindUserFamilyNameBySomeImproperFraction() {
+        assertEquals(List.of("Fernandez", "Blanco", "López", "Torres"), new Searches().findUserFamilyNameBySomeImproperFraction()
+                .collect(Collectors.toList()));
+    }
 }
